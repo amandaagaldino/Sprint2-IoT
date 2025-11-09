@@ -17,33 +17,35 @@ Para o desenvolvimento do protótipo, as seguintes ferramentas e tecnologias, pl
     
     - O banco de dados Oracle é utilizada não apenas para persistência, mas também para processamento de toda lógica de negócio através de PL/SQL.   
 
-  - **Oracle AI Services (OCI Language):** serviço de IA da **Oracle Cloud** para processamento de linguagem natural, especificamente a API de análise de sentimento.
-  
-    - Foram iniciados estudos e exploração da API de análise de sentimento para entender como integrá-la ao fluxo de dados. O      objetivo é utilizar este serviço para processar o texto das denúncias, conforme planejado na Sprint 1. 
-
-  - **Bibliotecas python (`pandas`, `scikit-learn`):** a exploração inicial destas bibliotecas foi realizada para planejar o desenvolvimento do mecanismo de detecção de padrões, que analisará os dados em busca de denúncias recorrentes contra os mesmos indivíduos ou equipes:
+  - **OpenStreetMap:** O OpenStreetMap (OSM) não é uma única API, mas sim um banco de dados de mapas aberto e gratuito, como uma "Wikipedia dos Mapas".
     
-    - `oci`: SDK oficial da **Oracle Cloud** para integração com serviços como **OCI Language**;
-    
-    - `pandas`: processamento e análise de dados de denúncias armazenadas;
-    
-    - `scikit-learn`: algoritmos de machine learning para identificação de padrões suspeitos (clustering de denúncias, detecção de anomalias).
+    - O OpenStreetMap é usada para mostrar visualmente o mapa e onde futuramente o alerta de emergência aparecerá. 
 
-## Funcionalidades do protótipo 
 
+## Funcionalidades do protótipo
 O protótipo atual, desenvolvido no **Oracle APEX**, já possui as seguintes funcionalidades implementadas e em execução: 
 
-  - **Formulário de registro de denúncia:** uma interface web permite que o usuário insira as informações essenciais da denúncia, como a partida, o árbitro e um campo de texto para o relato detalhado.
+  - **Acesso a conta:** Permite que usuários já existentes acessem o aplicativo usando seu email e senha.
 
-![Imagem](https://drive.google.com/uc?export=view&id=1qByk9LlRtsXpyLpju8KjdTZs_iurRyM-)
+  - **Formulário de registro de usuário:** Permite que novos usuários criem uma conta. Os campos solicitados são: Nome Completo, Email, Data de Nascimento, CPF, Senha e Confirmação de Senha.
 
-  - **Geração de protocolo anônimo:** após o envio do formulário, o sistema registra a denúncia no banco de dados e gera automaticamente um número de protocolo único, que é exibido ao denunciante para acompanhamento futuro.
+  - **Formulário cadastro de CEP:** uma interface web permite que o usuário insira o nome e um CEP, essas informações ficaram salvas e nas proxima vesão (Sprint 3) o usuario receberar alertas dessa região.
+
+![Imagem](/Users/amandagaldino/Sprint2-IoT/img/imgCEP.png)
+
+  - **Pagina de orientações:** O app possui uma seção detalhada com guias sobre como agir em diferentes tipos de "eventos adversos". O exemplo mostrado é "Orientações para Enchentes", que é dividido em três fases:
+    - Antes da Enchente (Ex: preparar kit de emergência, identificar rotas de fuga).
+    - Durante a Enchente (Ex: evitar áreas alagadas, não usar equipamentos elétricos).
+    - Após a Enchente (Ex: aguardar autorização para retornar, verificar danos estruturais).
 
 ![Imagem](https://drive.google.com/uc?export=view&id=1qOW88e3f5n8LI3cP9T1AA1OgeJfo2NHM)
 
-  - **Tela de consulta de protocolo:** uma funcionalidade básica de consulta foi implementada, permitindo ao usuário inserir seu número de protocolo para verificar o status atual da sua denúncia (ex: “Recebida”, “Em análise”).
+  - **Mapa (Sprint 3):** Mapa é usada para mostrar visualmente o mapa e onde futuramente o alerta de emergência aparecerá. 
+
+   - **Envio de SMS (Sprint 3):** Há um botão de destaque ("Enviar SMS") para usuários que "estão em uma área de risco", indicando uma forma rápida de pedir ajuda ou contatar serviços de emergência.
 
 ![Imagem](https://drive.google.com/uc?export=view&id=1SZfxWnJF0RpVSC4ZnQffetbCVc77_dIv)
+
 
 ## Integrações que já puderam ser testadas ou implementadas
 
@@ -57,34 +59,13 @@ A principal integração implementada e testada com sucesso nesta sprint foi:
 
 Para as próximas sprints, os passos planejados para a evolução do projeto são: 
 
-  1. **Integração contínua da IA:** implementar de forma definitiva a chamada à **API de análise de sentimento** para que toda nova denúncia seja automaticamente classificada e marcada no banco de dados.
+  1. **Integração contínua da IA:** implementar de forma definitiva a chamada à **API de análise** para que toda novo alerta seja automaticamente classificada e marcada no banco de dados.
      
-  2. **Desenvolvimento do módulo de análise de dados:** criar o back-end que analisará os dados armazenados para identificar padrões e tendências suspeitas, como múltiplas denúncias contra um mesmo árbitro ou time.
+  2. **Desenvolvimento do módulo de análise de dados:** criar o back-end que analisará os dados armazenados para identificar padrões e tendências suspeitas.
      
-  3. **Criação de um dashboard administrativo:** desenvolver uma visão para os administradores do sistema, onde possam visualizar as denúncias, os resultados da análise de sentimento e os alertas gerados pela análise de dados.
+  3. **Intregração com a API de SMS:** implementar de forma definitiva a **API de SMS** desenvolvida em java utilizando o Twilio.
      
   4. **Refinamento da interface (UI/UX):** melhorar a experiência do usuário no protótipo com base em feedbacks e testes de usabilidade.
-
-## Fluxo técnico
-
-O que acontece **AGORA** (Sprint 2):
-
-```bash
-   APEX     →      Database     →        APEX
-(interface)    (salva/atualiza)    (mostra protocolo)
-```
-
-O que acontecerá **DEPOIS** (Sprints futuras):
-
-```bash
-   APEX     →      Database   →     OCI Language     →    Database    →         APEX
-(interface)        (salva)      (analisa sentimento)     (atualiza)       (mostra protocolo)
-```
-
-```bash
- Database   →      Python (pandas + scikit-learn)     →    Database    →    Dashboard APEX
- (dados)             (detecta padrões suspeitos)           (alertas)      (visualização admin)
-```
 
 ## Vídeo de demonstração
 
