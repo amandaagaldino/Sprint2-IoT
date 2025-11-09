@@ -26,34 +26,35 @@ Para o desenvolvimento do protótipo, as seguintes ferramentas e tecnologias, pl
 O protótipo atual, desenvolvido no **Oracle APEX**, já possui as seguintes funcionalidades implementadas e em execução: 
 
   - **Acesso a conta:** Permite que usuários já existentes acessem o aplicativo usando seu email e senha.
+  <img src="./img/imgEntrar.png" alt="Imagem">
 
   - **Formulário de registro de usuário:** Permite que novos usuários criem uma conta. Os campos solicitados são: Nome Completo, Email, Data de Nascimento, CPF, Senha e Confirmação de Senha.
+    <img src="./img/imgCadastro.png" alt="Imagem">
 
   - **Formulário cadastro de CEP:** uma interface web permite que o usuário insira o nome e um CEP, essas informações ficaram salvas e nas proxima vesão (Sprint 3) o usuario receberar alertas dessa região.
-
-![Imagem](/Users/amandagaldino/Sprint2-IoT/img/imgCEP.png)
+  <img src="./img/imgCEP.png" alt="Imagem">
 
   - **Pagina de orientações:** O app possui uma seção detalhada com guias sobre como agir em diferentes tipos de "eventos adversos". O exemplo mostrado é "Orientações para Enchentes", que é dividido em três fases:
     - Antes da Enchente (Ex: preparar kit de emergência, identificar rotas de fuga).
     - Durante a Enchente (Ex: evitar áreas alagadas, não usar equipamentos elétricos).
     - Após a Enchente (Ex: aguardar autorização para retornar, verificar danos estruturais).
 
-![Imagem](https://drive.google.com/uc?export=view&id=1qOW88e3f5n8LI3cP9T1AA1OgeJfo2NHM)
+  <img src="./img/imgOrientacoes.png" alt="Imagem">
 
   - **Mapa (Sprint 3):** Mapa é usada para mostrar visualmente o mapa e onde futuramente o alerta de emergência aparecerá. 
 
    - **Envio de SMS (Sprint 3):** Há um botão de destaque ("Enviar SMS") para usuários que "estão em uma área de risco", indicando uma forma rápida de pedir ajuda ou contatar serviços de emergência.
 
-![Imagem](https://drive.google.com/uc?export=view&id=1SZfxWnJF0RpVSC4ZnQffetbCVc77_dIv)
+  <img src="./img/imgMapa.png" alt="Imagem">
 
 
 ## Integrações que já puderam ser testadas ou implementadas
 
 A principal integração implementada e testada com sucesso nesta sprint foi:
 
-- **Integração entre Oracle APEX e Oracle Database (banco de dados integrado):** a conexão entre a interface do protótipo e o banco de dados embutido no APEX estão totalmente funcionais. Os formulários criados no APEX conseguem inserir (registrar denúncias) e consultar dados diretamente nas tabelas do banco de dados, garantindo a persistência das informações.
+- **Integração entre Oracle APEX e Oracle Database (banco de dados integrado):** a conexão entre a interface do protótipo e o banco de dados embutido no APEX estão totalmente funcionais. Os formulários criados no APEX conseguem inserir CEP e consultar dados diretamente nas tabelas do banco de dados, garantindo a persistência das informações.
 
-- Adicionalmente, **foi realizado um teste preliminar (prova de conceito) de consumo da API do serviço de análise de sentimento da OCI**, confirmando a viabilidade técnica de enviar um texto de denúncia e receber uma classificação de sentimento.
+- Adicionalmente, **foi realizado um teste preliminar (prova de conceito) de consumo da API do SMS**, confirmando a viabilidade técnica de enviar da mensagem.
 
 ## Próximos passos até a versão final 
 
