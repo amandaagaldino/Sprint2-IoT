@@ -29,7 +29,7 @@ O protótipo atual, desenvolvido no **Oracle APEX**, já possui as seguintes fun
   <img src="./img/imgEntrar.png" alt="Imagem">
 
   - **Formulário de registro de usuário:** Permite que novos usuários criem uma conta. Os campos solicitados são: Nome Completo, Email, Data de Nascimento, CPF, Senha e Confirmação de Senha.
-    <img src="./img/imgCadastro.png" alt="Imagem">
+  <img src="./img/imgCadastro.png" alt="Imagem">
 
   - **Formulário cadastro de CEP:** uma interface web permite que o usuário insira o nome e um CEP, essas informações ficaram salvas e nas proxima vesão (Sprint 3) o usuario receberar alertas dessa região.
   <img src="./img/imgCEP.png" alt="Imagem">
@@ -74,4 +74,4 @@ Segue abaixo o link do vídeo apresentando a evolução do projeto e demonstrand
 
 > 🎬 Clique na imagem abaixo para assistir no YouTube
 
-[![Assista ao vídeo](https://img.youtube.com/vi/UewdXhF_TZ8/maxresdefault.jpg)](https://youtu.be/ctzDoaCnXF4?si=H6sil0fHTgRDbUEb) 
+[![Assista ao vídeo](./img/capaVideo.jpg)](https://youtu.be/s1n1HTfvzBU) 
